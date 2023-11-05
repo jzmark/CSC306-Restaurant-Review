@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <ImageView
+        android:id="@+id/restaurantPicture"
+        android:layout_width="1dp"
+        android:layout_height="70dp"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:layout_marginStart="10dp"
+        android:contentDescription="@string/restaurant_picture" />
+
+    <TextView
+        android:id="@+id/restaurantDetails"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_weight="1"
+        android:paddingTop="15dp" />
+
+    <Button
+        android:id="@+id/button"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="25dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:layout_marginEnd="10dp"
+        android:layout_weight="1"
+        android:text="@string/reviews" />
+
+
+</LinearLayout>

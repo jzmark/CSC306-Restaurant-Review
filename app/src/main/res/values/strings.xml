@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Restaurant Reviewer</string>
+    <string name="app_name">FoodNow - Restaurant Reviewer</string>
     <string name="login_message">Please log in or sign up below</string>
     <string name="name">Name</string>
     <string name="password">Password</string>
@@ -7,4 +7,7 @@
     <string name="sign_up">Sign Up</string>
     <string name="log_in">Log In</string>
     <string name="guest">Guest</string>
+    <string name="reviews">Reviews</string>
+    <string name="restaurant_picture">Restaurant picture</string>
+    <string name="restaurant_name">Dummy data - restaurant in Swansea</string>
 </resources>
