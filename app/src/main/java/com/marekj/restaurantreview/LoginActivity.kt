@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
 
         for (i in 0..9) {
             val imageModel = RecyclerViewModel()
-            imageModel.setNames(getString(myImageNameList[i]))
+            imageModel.setNames(getString(myImageNameList[i]) + " " + i)
             imageModel.setImages(myImageList[i])
             list.add(imageModel)
         }

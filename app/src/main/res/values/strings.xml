@@ -10,4 +10,7 @@
     <string name="reviews">Reviews</string>
     <string name="restaurant_picture">Restaurant picture</string>
     <string name="restaurant_name">Dummy data - restaurant in Swansea</string>
+    <string name="search">Search</string>
+    <string name="logout">Log Out</string>
+    <string name="yourReviews">Your Reviews</string>
 </resources>
