@@ -11,15 +11,15 @@ import androidx.recyclerview.widget.RecyclerView
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_menu)
+        setContentView(R.layout.add_review)
 
-        val imageModelArrayList = populateList()
+        /*val imageModelArrayList = populateList()
 
         val recyclerView = findViewById<View>(R.id.my_recycler_view) as RecyclerView // Bind to the recyclerview in the layout
         val layoutManager = LinearLayoutManager(this) // Get the layout manager
         recyclerView.layoutManager = layoutManager
         val mAdapter = RestaurantListAdapter(imageModelArrayList)
-        recyclerView.adapter = mAdapter
+        recyclerView.adapter = mAdapter*/
     }
 
     /*

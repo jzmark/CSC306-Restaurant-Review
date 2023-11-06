@@ -8,11 +8,6 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/more"
-        android:title="@string/yourReviews"
-        app:showAsAction="never" />
-
-    <item
         android:id="@+id/more2"
         android:title="@string/logout"
         app:showAsAction="never" />

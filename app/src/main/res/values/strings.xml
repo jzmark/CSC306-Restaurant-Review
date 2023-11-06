@@ -13,4 +13,11 @@
     <string name="search">Search</string>
     <string name="logout">Log Out</string>
     <string name="yourReviews">Your Reviews</string>
+    <string name="restaurantList">Restaurant List</string>
+    <string name="addReviewTab">Add Review</string>
+    <string name="addReview">Add Review</string>
+    <string name="restaurantName">Restaurant Name</string>
+    <string name="restaurantLocation">Restaurant Location</string>
+    <string name="attach">Attach photos</string>
+    <string name="submit">Submit</string>
 </resources>
