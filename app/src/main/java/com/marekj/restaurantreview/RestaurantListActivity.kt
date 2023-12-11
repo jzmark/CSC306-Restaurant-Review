@@ -1,14 +1,20 @@
 package com.marekj.restaurantreview
 
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.TextView
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.marekj.restaurantreview.recyclerview.RecyclerViewModel
 import com.marekj.restaurantreview.recyclerview.RestaurantListAdapter
 
@@ -30,6 +36,9 @@ class RestaurantListActivity : AppCompatActivity() {
     private fun drawerListener() {
         val topAppBar = findViewById<MaterialToolbar>(R.id.topAppBar)
         val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
+        val headerTopNavDrawer = findViewById<TextView>(R.id.headerNavDrawer)
+        //headerTopNavDrawer.text = "dd"
+        Log.w(TAG, "Nazwa profilu " + getProfileName())
         topAppBar.setNavigationOnClickListener {
             drawerLayout.open()
         }
@@ -49,6 +58,16 @@ class RestaurantListActivity : AppCompatActivity() {
 //                true
 //            }
         }
+    }
+
+    private fun getProfileName() : String {
+        val user = Firebase.auth.currentUser
+        var name = ""
+        user?.let {
+            // Name, email address, and profile photo Url
+             name = it.displayName.toString()
+        }
+        return name
     }
 
     private fun populateList(): ArrayList<RecyclerViewModel> {

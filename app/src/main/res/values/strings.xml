@@ -28,4 +28,6 @@
     <string name="nameLimitExceeded">I am sorry, but we are not able to store names
         exceeding 30 characters. Please contact the app developer.</string>
     <string name="emptyField">Some of the text fields are empty.</string>
+    <string name="passLengthErr">Password needs to be longer than 6 characters.</string>
+    <string name="incorrectCredentials">Incorrect password and/or email.</string>
 </resources>
