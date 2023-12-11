@@ -2,6 +2,7 @@
     <string name="app_name">FoodNow - Restaurant Reviewer</string>
     <string name="login_message">Please log in or sign up below</string>
     <string name="name">Name</string>
+    <string name="firstName">First name</string>
     <string name="password">Password</string>
     <string name="logo_pic">Logo picture</string>
     <string name="sign_up">Sign Up</string>
@@ -20,4 +21,11 @@
     <string name="restaurantLocation">Restaurant Location</string>
     <string name="attach">Attach photos</string>
     <string name="submit">Submit</string>
+    <string name="email">Email</string>
+    <string name="confirmPassword">Confirm password</string>
+    <string name="wrongEmailFormat">Please check your email format.</string>
+    <string name="passNoMatch">Passwords are not matching.</string>
+    <string name="nameLimitExceeded">I am sorry, but we are not able to store names
+        exceeding 30 characters. Please contact the app developer.</string>
+    <string name="emptyField">Some of the text fields are empty.</string>
 </resources>
