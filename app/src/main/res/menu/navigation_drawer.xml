@@ -1,0 +1,40 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<!--    <group-->
+<!--        android:id="@+id/group1"-->
+<!--        android:checkableBehavior="single">-->
+<!--        <item-->
+<!--            android:id="@+id/mainMenu"-->
+<!--            android:icon="@drawable/ic_home_foreground"-->
+<!--            android:title="@string/main_menu" />-->
+<!--        <item-->
+<!--            android:id="@+id/questionsDrawer"-->
+<!--            android:icon="@drawable/ic_answer_foreground"-->
+<!--            android:title="@string/questions" />-->
+<!--        <item-->
+<!--            android:id="@+id/galleryDrawer"-->
+<!--            android:icon="@drawable/ic_photo_foreground"-->
+<!--            android:title="@string/gallery" />-->
+<!--        <item-->
+<!--            android:id="@+id/uploadDrawer"-->
+<!--            android:icon="@drawable/ic_upload_foreground"-->
+<!--            android:title="@string/upload_photos" />-->
+<!--    </group>-->
+<!--    <group-->
+<!--        android:id="@+id/group2"-->
+<!--        android:checkableBehavior="single">-->
+<!--        <item-->
+<!--            android:id="@+id/helpDrawer"-->
+<!--            android:icon="@drawable/ic_question_foreground"-->
+<!--            android:title="@string/help" />-->
+<!--        <item-->
+<!--            android:id="@+id/settingsDrawer"-->
+<!--            android:icon="@drawable/ic_settings_foreground"-->
+<!--            android:title="@string/settings" />-->
+<!--        <item-->
+<!--            android:id="@+id/logoutDrawer"-->
+<!--            android:icon="@drawable/ic_logout_foreground"-->
+<!--            android:title="@string/logout" />-->
+<!--    </group>-->
+
+</menu>
