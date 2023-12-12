@@ -14,8 +14,8 @@
     <string name="search">Search</string>
     <string name="logout">Log Out</string>
     <string name="yourReviews">Your Reviews</string>
+    <string name="myReviews">My Reviews</string>
     <string name="restaurantList">Restaurant List</string>
-    <string name="addReviewTab">Add Review</string>
     <string name="addReview">Add Review</string>
     <string name="restaurantName">Restaurant Name</string>
     <string name="restaurantLocation">Restaurant Location</string>
@@ -32,4 +32,5 @@
     <string name="incorrectCredentials">Incorrect password and/or email.</string>
     <string name="username">Username</string>
     <string name="emailExists">Email is already used.</string>
+    <string name="settings">Settings</string>
 </resources>
