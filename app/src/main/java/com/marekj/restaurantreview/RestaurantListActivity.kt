@@ -56,18 +56,19 @@ class RestaurantListActivity : AppCompatActivity() {
         val navigationView = findViewById<NavigationView>(R.id.navigation)
         navigationView.setNavigationItemSelectedListener { menuItem ->
             // Handle menu item selected
-            menuItem.isChecked = true
             drawerLayout.close()
             true
-//            if (menuItem.itemId == R.id.logoutDrawer) {
+            if (menuItem.itemId == R.id.logoutDrawer) {
+                val menuIntent = Intent(this, LoginActivity::class.java)
+                Firebase.auth.signOut()
+                startActivity(menuIntent)
+                finish()
+                true
+            } else {
 //                val menuIntent = Intent(this, RestaurantListActivity::class.java)
 //                startActivity(menuIntent)
-//                true
-//            } else {
-//                val menuIntent = Intent(this, LoginActivity::class.java)
-//                startActivity(menuIntent)
-//                true
-//            }
+                true
+            }
         }
     }
 

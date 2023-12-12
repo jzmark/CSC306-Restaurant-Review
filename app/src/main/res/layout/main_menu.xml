@@ -34,7 +34,7 @@
                     android:background="@android:color/transparent"
                     android:elevation="0dp"
                     app:navigationIcon="@drawable/ic_menu"
-                    app:title="@string/reviews" />
+                    app:title="@string/restaurantList" />
 
             </com.google.android.material.appbar.AppBarLayout>
 
