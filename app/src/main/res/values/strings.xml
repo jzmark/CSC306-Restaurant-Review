@@ -25,9 +25,11 @@
     <string name="confirmPassword">Confirm password</string>
     <string name="wrongEmailFormat">Please check your email format.</string>
     <string name="passNoMatch">Passwords are not matching.</string>
-    <string name="nameLimitExceeded">I am sorry, but we are not able to store names
-        exceeding 30 characters. Please contact the app developer.</string>
+    <string name="nameLimitExceeded">Username needs to be between
+        4 and 10 characters long.</string>
     <string name="emptyField">Some of the text fields are empty.</string>
     <string name="passLengthErr">Password needs to be longer than 6 characters.</string>
     <string name="incorrectCredentials">Incorrect password and/or email.</string>
+    <string name="username">Username</string>
+    <string name="emailExists">Email is already used.</string>
 </resources>
