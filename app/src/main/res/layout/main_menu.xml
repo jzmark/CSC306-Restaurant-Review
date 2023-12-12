@@ -38,47 +38,18 @@
 
             </com.google.android.material.appbar.AppBarLayout>
 
-            <com.google.android.material.tabs.TabLayout
-                android:id="@+id/tabLayout"
+
+            <view
+                android:id="@+id/my_recycler_view"
+                class="androidx.recyclerview.widget.RecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:scrollbars="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
-                tools:layout_conversion_absoluteHeight="48dp"
-                tools:layout_conversion_absoluteWidth="411dp">
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/reviews"
-                    tools:layout_conversion_absoluteHeight="48dp"
-                    tools:layout_conversion_absoluteWidth="206dp"
-                    tools:layout_editor_absoluteX="0dp"
-                    tools:layout_editor_absoluteY="56dp" />
-
-                <com.google.android.material.tabs.TabItem
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/yourReviews"
-                    tools:layout_conversion_absoluteHeight="48dp"
-                    tools:layout_conversion_absoluteWidth="206dp"
-                    tools:layout_editor_absoluteX="206dp"
-                    tools:layout_editor_absoluteY="56dp" />
-
-            </com.google.android.material.tabs.TabLayout>
-
-
-                    <view
-                        android:id="@+id/my_recycler_view"
-                        class="androidx.recyclerview.widget.RecyclerView"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:scrollbars="vertical"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-                        tools:layout_conversion_absoluteHeight="669dp"
-                        tools:layout_conversion_absoluteWidth="411dp" />
+                tools:layout_conversion_absoluteHeight="669dp"
+                tools:layout_conversion_absoluteWidth="411dp" />
 
 
 
