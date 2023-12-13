@@ -8,6 +8,6 @@ import com.squareup.picasso.Picasso
 import java.net.URL
 
 
-class RestaurantEntity(val name: String, val description: String) {
+class RestaurantEntity(val name: String, val description: String, val address: String) {
 
 }

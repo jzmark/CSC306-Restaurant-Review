@@ -4,6 +4,7 @@ package com.marekj.restaurantreview.recyclerview
  */
 class RecyclerViewModel {
     var modelName: String? = null
+    var modelDescription: String? = null
     private var modelImage: Int = 0
 
     /*
@@ -28,7 +29,15 @@ class RecyclerViewModel {
 
     /* Set a team logo
      */
-    fun setImages(image_drawable: Int) {
-        this.modelImage = image_drawable
+    fun setImages(imageDrawable: Int) {
+        this.modelImage = imageDrawable
+    }
+
+    fun setDescription(description: String) {
+        this.modelDescription = description
+    }
+
+    fun getDescription(): String {
+        return modelDescription.toString()
     }
 }

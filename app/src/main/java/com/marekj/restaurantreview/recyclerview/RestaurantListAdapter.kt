@@ -28,6 +28,7 @@ class RestaurantListAdapter (private val imageModelArrayList: MutableList<Recycl
 
         holder.imgView.setImageResource(info.getImages())
         holder.txtMsg.text = info.getNames()
+        holder.description.text = info.getDescription()
     }
 
     /*
@@ -44,6 +45,7 @@ class RestaurantListAdapter (private val imageModelArrayList: MutableList<Recycl
 
         var imgView = itemView.findViewById<View>(R.id.restaurantPicture) as ImageView
         var txtMsg = itemView.findViewById<View>(R.id.restaurantDetails) as TextView
+        var description = itemView.findViewById<View>(R.id.restaurantDescription) as TextView
 
         init {
             itemView.setOnClickListener(this)

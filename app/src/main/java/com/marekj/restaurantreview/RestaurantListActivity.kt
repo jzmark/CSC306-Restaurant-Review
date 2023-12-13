@@ -92,16 +92,12 @@ class RestaurantListActivity : AppCompatActivity() {
         val myImageList = arrayOf(R.drawable.restaurant, R.drawable.restaurant, R.drawable.restaurant,
             R.drawable.restaurant, R.drawable.restaurant, R.drawable.restaurant, R.drawable.restaurant,
             R.drawable.restaurant, R.drawable.restaurant, R.drawable.restaurant)
-        val myImageNameList = arrayOf(R.string.restaurant_name, R.string.restaurant_name,
-            R.string.restaurant_name, R.string.restaurant_name, R.string.restaurant_name, R.string.restaurant_name,
-            R.string.restaurant_name, R.string.restaurant_name, R.string.restaurant_name, R.string.restaurant_name)
-
-        //TODO: FIX THAT BLOODY ASYNCHRONOUS FLOW
 
         for (i in 0..< restaurantList.size) {
             val imageModel = RecyclerViewModel()
             imageModel.setNames(restaurantList[i].name)
             imageModel.setImages(myImageList[i])
+            imageModel.setDescription(restaurantList[i].description)
             list.add(imageModel)
         }
         return list
