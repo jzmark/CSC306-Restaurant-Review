@@ -15,6 +15,8 @@ import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.QuerySnapshot
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.marekj.restaurantreview.recyclerview.RecyclerViewModel
 import com.marekj.restaurantreview.recyclerview.RestaurantListAdapter
@@ -82,7 +84,28 @@ class RestaurantListActivity : AppCompatActivity() {
         return name
     }
 
+    private fun urlToDrawable() {
+
+    }
+
     private fun populateList(): ArrayList<RecyclerViewModel> {
+        val db = Firebase.firestore
+        val restaurantList = ArrayList<RestaurantEntity>()
+        db.collection("restaurants")
+            .get()
+            .addOnSuccessListener { documents ->
+                for (document in documents) {
+                    val x = RestaurantEntity(document.data["name"].toString(),
+                        document.data["url"].toString())
+                    restaurantList.add(x)
+                    Log.d(TAG, x.name)
+                    Log.d(TAG, restaurantList.size.toString())
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.w(TAG, "Error getting documents: ", exception)
+            }
+
         val list = ArrayList<RecyclerViewModel>()
         val myImageList = arrayOf(R.drawable.restaurant, R.drawable.restaurant, R.drawable.restaurant,
             R.drawable.restaurant, R.drawable.restaurant, R.drawable.restaurant, R.drawable.restaurant,
@@ -91,12 +114,23 @@ class RestaurantListActivity : AppCompatActivity() {
             R.string.restaurant_name, R.string.restaurant_name, R.string.restaurant_name, R.string.restaurant_name,
             R.string.restaurant_name, R.string.restaurant_name, R.string.restaurant_name, R.string.restaurant_name)
 
-        for (i in 0..9) {
+        //TODO: FIX THAT BLOODY ASYNCHRONOUS FLOW
+
+        for (i in 0..restaurantList.size) {
             val imageModel = RecyclerViewModel()
-            imageModel.setNames(getString(myImageNameList[i]) + " " + i)
+            imageModel.setNames(restaurantList[i].name)
             imageModel.setImages(myImageList[i])
             list.add(imageModel)
         }
         return list
+
+//        val list = ArrayList<RecyclerViewModel>()
+//        for (i in 0..restaurantList.size) {
+//            val imageModel = RecyclerViewModel()
+//            imageModel.setNames(restaurantList[i].name)
+//            imageModel.setImages(R.drawable.restaurant)
+//            list.add(imageModel)
+//        }
+//        return list
     }
 }

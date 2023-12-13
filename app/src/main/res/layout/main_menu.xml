@@ -51,9 +51,6 @@
                 tools:layout_conversion_absoluteHeight="669dp"
                 tools:layout_conversion_absoluteWidth="411dp" />
 
-
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
