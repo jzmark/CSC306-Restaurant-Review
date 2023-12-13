@@ -2,10 +2,10 @@ package com.marekj.restaurantreview
 
 import Database
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,6 +16,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.marekj.restaurantreview.recyclerview.RecyclerViewModel
 import com.marekj.restaurantreview.recyclerview.RestaurantListAdapter
+
 
 class RestaurantListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -96,7 +97,9 @@ class RestaurantListActivity : AppCompatActivity() {
         for (i in 0..< restaurantList.size) {
             val imageModel = RecyclerViewModel()
             imageModel.setNames(restaurantList[i].name)
-            imageModel.setImages(myImageList[i])
+            val resource = restaurantList[i].imageFile
+            val id = resources.getIdentifier(resource, "drawable", packageName)
+            imageModel.setImages(id)
             imageModel.setDescription(restaurantList[i].description)
             list.add(imageModel)
         }
