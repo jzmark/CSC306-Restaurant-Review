@@ -1,5 +1,6 @@
 package com.marekj.restaurantreview
 
+import Database
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
@@ -34,6 +35,7 @@ class LoginActivity : AppCompatActivity() {
             val signUpActivity = Intent(this, RegisterActivity::class.java)
             startActivity(signUpActivity)
         }
+
     }
 
     public override fun onStart() {

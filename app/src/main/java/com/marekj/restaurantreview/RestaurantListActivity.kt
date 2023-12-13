@@ -1,10 +1,9 @@
 package com.marekj.restaurantreview
 
-import android.content.ContentValues.TAG
+import Database
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.drawerlayout.widget.DrawerLayout
@@ -13,14 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.QuerySnapshot
-import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.marekj.restaurantreview.recyclerview.RecyclerViewModel
 import com.marekj.restaurantreview.recyclerview.RestaurantListAdapter
-import org.w3c.dom.Text
 
 class RestaurantListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -89,22 +84,9 @@ class RestaurantListActivity : AppCompatActivity() {
     }
 
     private fun populateList(): ArrayList<RecyclerViewModel> {
-        val db = Firebase.firestore
-        val restaurantList = ArrayList<RestaurantEntity>()
-        db.collection("restaurants")
-            .get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    val x = RestaurantEntity(document.data["name"].toString(),
-                        document.data["url"].toString())
-                    restaurantList.add(x)
-                    Log.d(TAG, x.name)
-                    Log.d(TAG, restaurantList.size.toString())
-                }
-            }
-            .addOnFailureListener { exception ->
-                Log.w(TAG, "Error getting documents: ", exception)
-            }
+        val database = Database(this)
+        val restaurantList = database.getRestaurants()
+
 
         val list = ArrayList<RecyclerViewModel>()
         val myImageList = arrayOf(R.drawable.restaurant, R.drawable.restaurant, R.drawable.restaurant,
@@ -116,7 +98,7 @@ class RestaurantListActivity : AppCompatActivity() {
 
         //TODO: FIX THAT BLOODY ASYNCHRONOUS FLOW
 
-        for (i in 0..restaurantList.size) {
+        for (i in 0..< restaurantList.size) {
             val imageModel = RecyclerViewModel()
             imageModel.setNames(restaurantList[i].name)
             imageModel.setImages(myImageList[i])
