@@ -1,7 +1,6 @@
 package com.marekj.restaurantreview
 
-import RestaurantDatabase
-import ReviewDatabase
+import com.marekj.restaurantreview.database.RestaurantDatabase
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView

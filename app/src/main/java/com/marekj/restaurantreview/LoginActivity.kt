@@ -14,6 +14,7 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.marekj.restaurantreview.database.ReviewDatabase
 
 class LoginActivity : AppCompatActivity() {
 
@@ -22,7 +23,6 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         auth = Firebase.auth
         setContentView(R.layout.login_menu)
-
         loginListener()
 
         val signUpButton = findViewById<Button>(R.id.signUp)

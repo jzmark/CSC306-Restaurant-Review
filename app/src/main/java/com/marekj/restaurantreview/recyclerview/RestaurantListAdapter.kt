@@ -1,8 +1,6 @@
 package com.marekj.restaurantreview.recyclerview
 
-import android.content.ContentValues.TAG
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +18,7 @@ class RestaurantListAdapter (private val imageModelArrayList: MutableList<Recycl
      */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val v = inflater.inflate(R.layout.row_layout, parent, false)
+        val v = inflater.inflate(R.layout.restaurantlist_row_layout, parent, false)
 
         return ViewHolder(v)
     }

@@ -1,6 +1,6 @@
 package com.marekj.restaurantreview
 
-import RestaurantDatabase
+import com.marekj.restaurantreview.database.RestaurantDatabase
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -23,7 +23,6 @@ class RestaurantListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_menu)
         drawerListener()
-
         
         val imageModelArrayList = populateList()
         val recyclerView = findViewById<View>(R.id.my_recycler_view) as RecyclerView // Bind to the recyclerview in the layout
