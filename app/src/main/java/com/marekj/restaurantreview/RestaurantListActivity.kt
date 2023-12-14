@@ -88,11 +88,7 @@ class RestaurantListActivity : AppCompatActivity() {
         val database = Database(this)
         val restaurantList = database.getRestaurants()
 
-
         val list = ArrayList<RecyclerViewModel>()
-        val myImageList = arrayOf(R.drawable.restaurant, R.drawable.restaurant, R.drawable.restaurant,
-            R.drawable.restaurant, R.drawable.restaurant, R.drawable.restaurant, R.drawable.restaurant,
-            R.drawable.restaurant, R.drawable.restaurant, R.drawable.restaurant)
 
         for (i in 0..< restaurantList.size) {
             val imageModel = RecyclerViewModel()
@@ -104,14 +100,5 @@ class RestaurantListActivity : AppCompatActivity() {
             list.add(imageModel)
         }
         return list
-
-//        val list = ArrayList<RecyclerViewModel>()
-//        for (i in 0..restaurantList.size) {
-//            val imageModel = RecyclerViewModel()
-//            imageModel.setNames(restaurantList[i].name)
-//            imageModel.setImages(R.drawable.restaurant)
-//            list.add(imageModel)
-//        }
-//        return list
     }
 }
