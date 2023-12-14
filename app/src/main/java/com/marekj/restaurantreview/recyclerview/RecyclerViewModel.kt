@@ -3,9 +3,10 @@ package com.marekj.restaurantreview.recyclerview
  * Data model class to store logos and team names from F1
  */
 class RecyclerViewModel {
-    var modelName: String? = null
-    var modelDescription: String? = null
+    private var modelName: String? = null
+    private var modelDescription: String? = null
     private var modelImage: Int = 0
+    private var id: Int = 0
 
     /*
      * Return the team name
@@ -39,5 +40,13 @@ class RecyclerViewModel {
 
     fun getDescription(): String {
         return modelDescription.toString()
+    }
+
+    fun setId(id: Int) {
+        this.id = id
+    }
+
+    fun getId(): Int {
+        return id
     }
 }

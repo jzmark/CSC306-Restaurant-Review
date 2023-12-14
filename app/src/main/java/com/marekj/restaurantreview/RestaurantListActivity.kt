@@ -80,10 +80,6 @@ class RestaurantListActivity : AppCompatActivity() {
         return name
     }
 
-    private fun urlToDrawable() {
-
-    }
-
     private fun populateList(): ArrayList<RecyclerViewModel> {
         val database = Database(this)
         val restaurantList = database.getRestaurants()

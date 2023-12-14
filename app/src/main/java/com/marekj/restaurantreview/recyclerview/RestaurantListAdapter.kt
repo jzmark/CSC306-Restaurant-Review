@@ -1,14 +1,18 @@
 package com.marekj.restaurantreview.recyclerview
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 import com.marekj.restaurantreview.R
+import com.marekj.restaurantreview.RestaurantView
 
-class RestaurantListAdapter (private val imageModelArrayList: MutableList<RecyclerViewModel>) : RecyclerView.Adapter<RestaurantListAdapter.ViewHolder>() {
+class RestaurantListAdapter (private val imageModelArrayList: MutableList<RecyclerViewModel>)
+    : RecyclerView.Adapter<RestaurantListAdapter.ViewHolder>() {
 
     /*
      * Inflate our views using the layout defined in row_layout.xml
@@ -52,9 +56,8 @@ class RestaurantListAdapter (private val imageModelArrayList: MutableList<Recycl
         }
 
         override fun onClick(v: View) {
-            /*val msg = txtMsg.text
-            val snackbar = Snackbar.make(v, "$msg" + R.string.msg, Snackbar.LENGTH_LONG)
-            snackbar.show()*/
+            var intent = Intent(itemView.context, RestaurantView::class.java)
+            itemView.context.startActivity(intent)
         }
     }
 }

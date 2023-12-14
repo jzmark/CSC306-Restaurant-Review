@@ -77,12 +77,31 @@ class Database (context: Context?) :
             do {
                 restaurants.add(RestaurantEntity(cursorRestaurants.getString(1),
                     cursorRestaurants.getString(2), cursorRestaurants.getString(3),
-                    cursorRestaurants.getString(4)))
+                    cursorRestaurants.getString(4), cursorRestaurants.getString(0)))
             } while (cursorRestaurants.moveToNext())
         }
         cursorRestaurants.close()
         db.close()
         return restaurants
+    }
+
+    fun getRestaurantById(id: Int)
+            : RestaurantEntity  {
+        val db = this.readableDatabase
+
+        val cursorRestaurants = db.rawQuery("SELECT * FROM $TABLE_NAME WHERE $ID_COL = $id", null)
+
+        var restaurant = RestaurantEntity()
+        if (cursorRestaurants.moveToFirst()) {
+            do {
+                restaurant = RestaurantEntity(cursorRestaurants.getString(1),
+                    cursorRestaurants.getString(2), cursorRestaurants.getString(3),
+                    cursorRestaurants.getString(4), cursorRestaurants.getString(0))
+            } while (cursorRestaurants.moveToNext())
+        }
+        cursorRestaurants.close()
+        db.close()
+        return restaurant
     }
 
     fun addRestaurant(
