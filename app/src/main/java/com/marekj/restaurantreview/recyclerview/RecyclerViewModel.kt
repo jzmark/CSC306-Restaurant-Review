@@ -6,7 +6,7 @@ class RecyclerViewModel {
     private var modelName: String? = null
     private var modelDescription: String? = null
     private var modelImage: Int = 0
-    private var id: Int = 0
+    private var id: String = ""
 
     /*
      * Return the team name
@@ -42,11 +42,11 @@ class RecyclerViewModel {
         return modelDescription.toString()
     }
 
-    fun setId(id: Int) {
+    fun setId(id: String) {
         this.id = id
     }
 
-    fun getId(): Int {
+    fun getId(): String {
         return id
     }
 }

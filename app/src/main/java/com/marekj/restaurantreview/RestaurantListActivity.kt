@@ -1,6 +1,6 @@
 package com.marekj.restaurantreview
 
-import Database
+import RestaurantDatabase
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -81,8 +81,8 @@ class RestaurantListActivity : AppCompatActivity() {
     }
 
     private fun populateList(): ArrayList<RecyclerViewModel> {
-        val database = Database(this)
-        val restaurantList = database.getRestaurants()
+        val restaurantDatabase = RestaurantDatabase(this)
+        val restaurantList = restaurantDatabase.getRestaurants()
 
         val list = ArrayList<RecyclerViewModel>()
 
@@ -93,6 +93,7 @@ class RestaurantListActivity : AppCompatActivity() {
             val id = resources.getIdentifier(resource, "drawable", packageName)
             imageModel.setImages(id)
             imageModel.setDescription(restaurantList[i].description)
+            imageModel.setId(restaurantList[i].id)
             list.add(imageModel)
         }
         return list
