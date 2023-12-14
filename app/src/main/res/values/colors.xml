@@ -3,6 +3,7 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="seed">#208bc7</color>
+    <color name="gold">#b59904</color>
     <color name="md_theme_light_primary">#006494</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>
     <color name="md_theme_light_primaryContainer">#CAE6FF</color>

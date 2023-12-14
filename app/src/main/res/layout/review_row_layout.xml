@@ -19,11 +19,13 @@
 
             <RatingBar
                 android:id="@+id/ratingBarReviewRow"
-                style="?android:attr/ratingBarStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_width="141dp"
+                android:layout_height="48dp"
                 android:layout_marginTop="5dp"
+                android:numStars="5"
+                android:stepSize="1"
+                android:theme="@style/RatingBar"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
