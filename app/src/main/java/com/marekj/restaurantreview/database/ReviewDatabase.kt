@@ -14,6 +14,7 @@ class ReviewDatabase (context: Context?) :
         private const val TABLE_NAME = "reviewlist"
         private const val ID_COL = "id"
         private const val USER_NAME = "username"
+        private const val UID = "uid"
         private const val RESTAURANT_ID = "restaurantid"
         private const val REVIEW = "review"
         private const val STARS = "stars"
@@ -24,19 +25,36 @@ class ReviewDatabase (context: Context?) :
         db.execSQL("CREATE TABLE " + TABLE_NAME + " ("
                 + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + USER_NAME + " TEXT,"
+                + UID + " TEXT,"
                 + RESTAURANT_ID + " INTEGER,"
                 + REVIEW + " TEXT,"
-                + STARS + " REAL,"
+                + STARS + " INTEGER,"
                 + LOCATION + " TEXT)")
-        db.execSQL("INSERT INTO $TABLE_NAME($USER_NAME, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
-                "VALUES('marek', 1, 'Testing one', 4.5, 'Swansea')")
-        db.execSQL("INSERT INTO $TABLE_NAME($USER_NAME, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
-                "VALUES('marek', 2, 'Testing two', 3.0, 'London')")
+        db.execSQL("INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
+                "VALUES('marek', '123abc', 1, 'Testing one', 4, 'Swansea')")
+        db.execSQL("INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
+                "VALUES('marek', '123def', 2, 'Testing two', 3, 'London')")
     }
 
-    fun test() {
+    fun getReviewsByRestaurantId(restaurantId: String) : ArrayList<ReviewEntity> {
         val db = this.readableDatabase
-        db.rawQuery("SELECT * FROM $TABLE_NAME", null)
+
+        val cursorReviews = db.rawQuery("SELECT * FROM $TABLE_NAME WHERE " +
+                "$RESTAURANT_ID = $restaurantId", null)
+
+        val reviews = ArrayList<ReviewEntity>()
+        if (cursorReviews.moveToFirst()) {
+            do {
+                reviews.add(ReviewEntity(cursorReviews.getString(0), cursorReviews.getString(1),
+                    cursorReviews.getString(2), cursorReviews.getString(3).toInt(),
+                    cursorReviews.getString(4), cursorReviews.getString(5).toInt(),
+                    cursorReviews.getString(6)))
+            } while (cursorReviews.moveToNext())
+
+        }
+        cursorReviews.close()
+        db.close()
+        return reviews
     }
 
 //    fun getRestaurants()

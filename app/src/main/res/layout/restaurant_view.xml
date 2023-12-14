@@ -85,7 +85,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/restaurantViewDescription" />
 
             <view
-                android:id="@+id/my_recycler_view"
+                android:id="@+id/restaurantReviewRecycler"
                 class="androidx.recyclerview.widget.RecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -98,16 +98,14 @@
                 tools:layout_conversion_absoluteWidth="411dp" />
 
             <Button
-                android:id="@+id/logIn"
+                android:id="@+id/addReview"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="@string/addReview"
-                app:layout_constraintBottom_toTopOf="@+id/signUp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/my_recycler_view" />
+                app:layout_constraintTop_toBottomOf="@+id/restaurantReviewRecycler" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

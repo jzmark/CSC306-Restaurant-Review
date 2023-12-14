@@ -10,8 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.marekj.restaurantreview.R
 import com.marekj.restaurantreview.RestaurantView
 
-class RestaurantListAdapter (private val imageModelArrayList: MutableList<RecyclerViewModel>)
-    : RecyclerView.Adapter<RestaurantListAdapter.ViewHolder>() {
+class RestaurantListAdapter(private val imageModelArrayList: MutableList<RecyclerViewModel>) : RecyclerView.Adapter<RestaurantListAdapter.ViewHolder>() {
 
     /*
      * Inflate our views using the layout defined in row_layout.xml
@@ -32,7 +31,7 @@ class RestaurantListAdapter (private val imageModelArrayList: MutableList<Recycl
         holder.imgView.setImageResource(info.getImages())
         holder.txtMsg.text = info.getNames()
         holder.description.text = info.getDescription()
-        holder.id = info.getId().toInt()
+        holder.restaurantId = info.getId().toInt()
     }
 
     /*
@@ -50,7 +49,7 @@ class RestaurantListAdapter (private val imageModelArrayList: MutableList<Recycl
         var imgView = itemView.findViewById<View>(R.id.restaurantPicture) as ImageView
         var txtMsg = itemView.findViewById<View>(R.id.restaurantDetails) as TextView
         var description = itemView.findViewById<View>(R.id.restaurantDescription) as TextView
-        var id = itemView.id
+        var restaurantId = 0
 
         init {
             itemView.setOnClickListener(this)
@@ -58,7 +57,7 @@ class RestaurantListAdapter (private val imageModelArrayList: MutableList<Recycl
 
         override fun onClick(v: View) {
             var intent = Intent(itemView.context, RestaurantView::class.java)
-            intent.putExtra("id", id.toString())
+            intent.putExtra("id", this.restaurantId.toString())
             itemView.context.startActivity(intent)
         }
     }
