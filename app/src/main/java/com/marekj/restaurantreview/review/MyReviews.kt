@@ -16,7 +16,7 @@ import com.marekj.restaurantreview.LoginActivity
 import com.marekj.restaurantreview.R
 import com.marekj.restaurantreview.database.ReviewDatabase
 import com.marekj.restaurantreview.database.ReviewEntity
-import com.marekj.restaurantreview.recyclerview.MyReviewsAdapter
+import com.marekj.restaurantreview.recyclerview.EditRestaurantListAdapter
 import com.marekj.restaurantreview.restaurant.RestaurantListActivity
 
 class MyReviews : AppCompatActivity() {
@@ -30,7 +30,7 @@ class MyReviews : AppCompatActivity() {
             findViewById<View>(R.id.myReviewsRecycle) as RecyclerView // Bind to the recyclerview in the layout
         val layoutManager = LinearLayoutManager(this) // Get the layout manager
         recyclerView.layoutManager = layoutManager
-        val mAdapter = MyReviewsAdapter(imageModelArrayList)
+        val mAdapter = EditRestaurantListAdapter(imageModelArrayList)
         recyclerView.adapter = mAdapter
     }
 

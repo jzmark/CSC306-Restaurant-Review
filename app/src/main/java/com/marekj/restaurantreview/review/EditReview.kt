@@ -58,18 +58,18 @@ class EditReview : AppCompatActivity() {
     }
 
     private fun checkFields(stars: Int?, location: String?, review: String?): Boolean {
-        val submitButton = findViewById<View>(R.id.submitButton)
-        if (review.isNullOrBlank() || location.isNullOrBlank()) {
-            submitButton.hideKeyboard()
+        val editButton = findViewById<View>(R.id.editButton)
+        if (review.isNullOrBlank() || location.isNullOrBlank() || stars == null) {
+            editButton.hideKeyboard()
             Snackbar.make(
-                submitButton, getString(R.string.emptyField),
+                editButton, getString(R.string.emptyField),
                 Snackbar.LENGTH_SHORT
             )
                 .show()
             return false
         } else if (stars == 0) {
             Snackbar.make(
-                submitButton, getString(R.string.noStars),
+                editButton, getString(R.string.noStars),
                 Snackbar.LENGTH_SHORT
             )
                 .show()

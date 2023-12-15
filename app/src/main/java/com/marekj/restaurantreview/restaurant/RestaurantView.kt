@@ -94,7 +94,6 @@ class RestaurantView : AppCompatActivity() {
             } else if (menuItem.itemId == R.id.myReviewsDrawer) {
                 val menuIntent = Intent(this, MyReviews::class.java)
                 startActivity(menuIntent)
-                finish()
                 false
             } else if (menuItem.itemId == R.id.restaurantsDrawer) {
                 val menuIntent = Intent(this, RestaurantListActivity::class.java)

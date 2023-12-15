@@ -35,47 +35,47 @@ class ReviewDatabase(context: Context?) :
         )
         db.execSQL(
             "INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
-                    "VALUES('marek', 'Z1tawqSvcQYcT197sMum2ARWUjy1', 1, 'Testing one', 4, 'Swansea')"
+                    "VALUES('marek', 'H0e3Edu48bNgQCB0RDt9oxNswvq1', 1, 'Testing one', 4, 'Swansea')"
         )
         db.execSQL(
             "INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
-                    "VALUES('marek', 'Z1tawqSvcQYcT197sMum2ARWUjy1', 1, 'Testing two', 3, 'London')"
+                    "VALUES('marek', 'H0e3Edu48bNgQCB0RDt9oxNswvq1', 1, 'Testing two', 3, 'London')"
         )
         db.execSQL(
             "INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
-                    "VALUES('marek', 'Z1tawqSvcQYcT197sMum2ARWUjy1', 1, 'Testing three', 2, 'Bristol')"
+                    "VALUES('marek', 'H0e3Edu48bNgQCB0RDt9oxNswvq1', 1, 'Testing three', 2, 'Bristol')"
         )
         db.execSQL(
             "INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
-                    "VALUES('marek', 'Z1tawqSvcQYcT197sMum2ARWUjy1', 1, 'Testing four', 1, 'Cardiff')"
+                    "VALUES('marek', 'H0e3Edu48bNgQCB0RDt9oxNswvq1', 1, 'Testing four', 1, 'Cardiff')"
         )
         db.execSQL(
             "INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
-                    "VALUES('marek', 'Z1tawqSvcQYcT197sMum2ARWUjy1', 1, 'Testing five', 5, 'Newport')"
+                    "VALUES('marek', 'H0e3Edu48bNgQCB0RDt9oxNswvq1', 1, 'Testing five', 5, 'Newport')"
         )
         db.execSQL(
             "INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
-                    "VALUES('marek', 'Z1tawqSvcQYcT197sMum2ARWUjy1', 2, 'Testing six', 3, 'Port Talbot')"
+                    "VALUES('marek', 'H0e3Edu48bNgQCB0RDt9oxNswvq1', 2, 'Testing six', 3, 'Port Talbot')"
         )
         db.execSQL(
             "INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
-                    "VALUES('marek', 'Z1tawqSvcQYcT197sMum2ARWUjy1', 3, 'Testing seven', 4, 'Brighton')"
+                    "VALUES('marek', 'H0e3Edu48bNgQCB0RDt9oxNswvq1', 3, 'Testing seven', 4, 'Brighton')"
         )
         db.execSQL(
             "INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
-                    "VALUES('marek', 'Z1tawqSvcQYcT197sMum2ARWUjy1', 4, 'Testing eight', 4, 'Plymouth')"
+                    "VALUES('marek', 'H0e3Edu48bNgQCB0RDt9oxNswvq1', 4, 'Testing eight', 4, 'Plymouth')"
         )
         db.execSQL(
             "INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
-                    "VALUES('marek', 'Z1tawqSvcQYcT197sMum2ARWUjy1', 5, 'Testing nine', 4, 'Edinburgh')"
+                    "VALUES('marek', 'H0e3Edu48bNgQCB0RDt9oxNswvq1', 5, 'Testing nine', 4, 'Edinburgh')"
         )
         db.execSQL(
             "INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
-                    "VALUES('marek', 'Z1tawqSvcQYcT197sMum2ARWUjy1', 6, 'Testing one', 4, 'Glasgow')"
+                    "VALUES('marek', 'H0e3Edu48bNgQCB0RDt9oxNswvq1', 6, 'Testing one', 4, 'Glasgow')"
         )
         db.execSQL(
             "INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
-                    "VALUES('marek', 'Z1tawqSvcQYcT197sMum2ARWUjy1', 4, 'Testing two', 3, 'Inverness')"
+                    "VALUES('marek', 'H0e3Edu48bNgQCB0RDt9oxNswvq1', 4, 'Testing two', 3, 'Inverness')"
         )
     }
 

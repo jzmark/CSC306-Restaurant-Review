@@ -77,6 +77,7 @@ class AddReviewActivity : AppCompatActivity() {
                 .show()
             return false
         } else if (stars == 0) {
+            submitButton.hideKeyboard()
             Snackbar.make(
                 submitButton, getString(R.string.noStars),
                 Snackbar.LENGTH_SHORT
