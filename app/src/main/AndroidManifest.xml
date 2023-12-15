@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RestaurantListActivity"
+            android:name=".restaurant.RestaurantListActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,7 +31,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AddReviewActivity"
+            android:name=".review.AddReviewActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,7 +49,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RestaurantView"
+            android:name=".restaurant.RestaurantView"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -58,7 +58,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MyReviews"
+            android:name=".review.MyReviews"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".review.DeleteReview"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

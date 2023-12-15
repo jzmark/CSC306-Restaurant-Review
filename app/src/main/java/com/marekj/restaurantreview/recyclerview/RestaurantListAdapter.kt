@@ -8,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.marekj.restaurantreview.R
-import com.marekj.restaurantreview.RestaurantView
+import com.marekj.restaurantreview.restaurant.RestaurantView
 
 class RestaurantListAdapter(private val imageModelArrayList: MutableList<RecyclerViewModel>) : RecyclerView.Adapter<RestaurantListAdapter.ViewHolder>() {
 
@@ -49,7 +49,7 @@ class RestaurantListAdapter(private val imageModelArrayList: MutableList<Recycle
         var imgView = itemView.findViewById<View>(R.id.restaurantPicture) as ImageView
         var txtMsg = itemView.findViewById<View>(R.id.restaurantDetails) as TextView
         var description = itemView.findViewById<View>(R.id.restaurantDescription) as TextView
-        var restaurantId = 0
+        var restaurantId = -1
 
         init {
             itemView.setOnClickListener(this)

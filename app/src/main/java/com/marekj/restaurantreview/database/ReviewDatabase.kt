@@ -105,6 +105,35 @@ class ReviewDatabase (context: Context?) :
                 "'${review.stars}', '${review.location}')")
     }
 
+    fun removeReview(reviewId: String) {
+        val db = this.writableDatabase
+        Log.w(TAG, "DELETE FROM $TABLE_NAME WHERE $ID_COL = $reviewId")
+        db.execSQL("DELETE FROM $TABLE_NAME WHERE $ID_COL = $reviewId")
+    }
+    fun getReviewsByReviewId(id: String) : ArrayList<ReviewEntity> {
+        val db = this.readableDatabase
+
+        val cursorReviews = db.rawQuery("SELECT * FROM $TABLE_NAME WHERE " +
+                "$ID_COL = $id", null)
+
+        val reviews = ArrayList<ReviewEntity>()
+        if (cursorReviews.moveToFirst()) {
+            do {
+                reviews.add(ReviewEntity(cursorReviews.getString(0), "Username: "
+                        +  cursorReviews.getString(1),
+                    cursorReviews.getString(2), cursorReviews.getString(3).toInt(),
+                    cursorReviews.getString(4), cursorReviews.getString(5).toInt(),
+                    "Location: " + cursorReviews.getString(6)))
+            } while (cursorReviews.moveToNext())
+
+        }
+        cursorReviews.close()
+        db.close()
+        return reviews
+    }
+
+
+
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         db.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
         onCreate(db)

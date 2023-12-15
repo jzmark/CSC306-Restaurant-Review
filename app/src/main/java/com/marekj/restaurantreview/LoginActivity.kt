@@ -14,7 +14,7 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.marekj.restaurantreview.database.ReviewDatabase
+import com.marekj.restaurantreview.restaurant.RestaurantListActivity
 
 class LoginActivity : AppCompatActivity() {
 

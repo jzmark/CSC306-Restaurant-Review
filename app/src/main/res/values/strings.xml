@@ -34,4 +34,11 @@
     <string name="emailExists">Email is already used.</string>
     <string name="settings">Settings</string>
     <string name="noStars">Please select the rating using stars.</string>
+    <string name="remove">Remove</string>
+    <string name="deleteConfirm">Delete review</string>
+    <string name="editReview">Edit review</string>
+    <string name="deleteConfirm2">Do you want do delete this review?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="edit">Edit</string>
 </resources>

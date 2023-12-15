@@ -1,17 +1,12 @@
 package com.marekj.restaurantreview.recyclerview
 
-import android.content.ContentValues.TAG
-import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.marekj.restaurantreview.R
-import com.marekj.restaurantreview.RestaurantView
 import com.marekj.restaurantreview.database.ReviewEntity
 
 class ReviewRestaurantListAdapter (private val imageModelArrayList: MutableList<ReviewEntity>)
