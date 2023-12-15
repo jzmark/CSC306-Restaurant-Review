@@ -49,7 +49,7 @@ class LoginActivity : AppCompatActivity() {
             val passText : String? = findViewById<TextInputEditText>(R.id.passwordInputField)
                 .text.toString()
             val check = checkFields(emailText, passText)
-            if (check == 0) {
+            if (check) {
                 auth.signInWithEmailAndPassword(emailText.toString(), passText.toString())
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
@@ -73,25 +73,25 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    //returns: 1 if any field is blank, 2 if email is not of correct format, 0 if test passed
-    private fun checkFields(email : String?, pass : String?) : Int {
+    //returns: false if error with fields, true if correct
+    private fun checkFields(email : String?, pass : String?) : Boolean {
         val signUpBtn = findViewById<View>(R.id.logIn)
         if (email.isNullOrBlank() || pass.isNullOrBlank()) {
             signUpBtn.hideKeyboard()
             Snackbar.make(signUpBtn, getString(R.string.emptyField),
                 Snackbar.LENGTH_SHORT)
                 .show()
-            return 1
+            return false
         }
         else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             signUpBtn.hideKeyboard()
             Snackbar.make(signUpBtn, getString(R.string.wrongEmailFormat),
                 Snackbar.LENGTH_SHORT)
                 .show()
-            return 2
+            return false
         }
         else {
-            return 0
+            return true
         }
     }
     private fun View.hideKeyboard() {

@@ -50,8 +50,8 @@
 
             <TextView
                 android:id="@+id/restaurantViewName"
-                android:layout_width="225dp"
-                android:layout_height="31dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="TextView"
                 android:textAlignment="center"
@@ -62,8 +62,8 @@
 
             <TextView
                 android:id="@+id/restaurantViewDescription"
-                android:layout_width="252dp"
-                android:layout_height="39dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="TextView"
                 android:textAlignment="center"
@@ -74,8 +74,8 @@
 
             <TextView
                 android:id="@+id/restaurantViewAddress"
-                android:layout_width="252dp"
-                android:layout_height="39dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="TextView"
                 android:textAlignment="center"

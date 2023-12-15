@@ -1,10 +1,12 @@
 package com.marekj.restaurantreview
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import com.marekj.restaurantreview.database.RestaurantDatabase
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -12,8 +14,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.marekj.restaurantreview.database.ReviewDatabase
 import com.marekj.restaurantreview.database.ReviewEntity
-import com.marekj.restaurantreview.recyclerview.RecyclerViewModel
-import com.marekj.restaurantreview.recyclerview.RestaurantListAdapter
 import com.marekj.restaurantreview.recyclerview.ReviewRestaurantListAdapter
 
 class RestaurantView : AppCompatActivity() {
@@ -30,6 +30,7 @@ class RestaurantView : AppCompatActivity() {
             Log.w(TAG, imageModelArrayList.size.toString())
             val mAdapter = ReviewRestaurantListAdapter(imageModelArrayList)
             recyclerView.adapter = mAdapter
+            reviewButtonListener(extras.getString("id")!!)
         }
     }
 
@@ -48,7 +49,12 @@ class RestaurantView : AppCompatActivity() {
         return ReviewDatabase(this).getReviewsByRestaurantId(extras)
     }
 
-    private fun addReviewButton() {
-        
+    private fun reviewButtonListener(restaurantId: String) {
+        val button = findViewById<Button>(R.id.addReview)
+        button.setOnClickListener {
+            var intent = Intent(this, AddReviewActivity::class.java)
+            intent.putExtra("id", restaurantId)
+            startActivity(intent)
+        }
     }
 }

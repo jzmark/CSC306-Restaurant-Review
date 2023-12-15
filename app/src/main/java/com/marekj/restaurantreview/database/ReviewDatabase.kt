@@ -75,70 +75,12 @@ class ReviewDatabase (context: Context?) :
         return reviews
     }
 
-//    fun getRestaurants()
-//    : ArrayList<RestaurantEntity>  {
-//        val db = this.readableDatabase
-//
-//        val cursorRestaurants = db.rawQuery("SELECT * FROM $TABLE_NAME", null)
-//
-//        val restaurants = ArrayList<RestaurantEntity>()
-//        if (cursorRestaurants.moveToFirst()) {
-//            do {
-//                restaurants.add(RestaurantEntity(cursorRestaurants.getString(1),
-//                    cursorRestaurants.getString(2), cursorRestaurants.getString(3),
-//                    cursorRestaurants.getString(4), cursorRestaurants.getString(0)))
-//            } while (cursorRestaurants.moveToNext())
-//        }
-//        cursorRestaurants.close()
-//        db.close()
-//        return restaurants
-//    }
-//
-//    fun getRestaurantById(restaurantId: String)
-//            : RestaurantEntity  {
-//        val db = this.readableDatabase
-//
-//        val cursorRestaurants = db.rawQuery("SELECT * FROM $TABLE_NAME WHERE $ID_COL = " +
-//                "$restaurantId", null)
-//
-//        var restaurant = RestaurantEntity()
-//        if (cursorRestaurants.moveToFirst()) {
-//            do {
-//                restaurant = RestaurantEntity(cursorRestaurants.getString(1),
-//                    cursorRestaurants.getString(2), cursorRestaurants.getString(3),
-//                    cursorRestaurants.getString(4), cursorRestaurants.getString(0))
-//            } while (cursorRestaurants.moveToNext())
-//        }
-//        cursorRestaurants.close()
-//        db.close()
-//        return restaurant
-//    }
-//
-//    fun addRestaurant(
-//        restaurantName: String?,
-//        description: String?
-//    ) {
-//        val db = this.writableDatabase
-//        val values = ContentValues()
-//
-//        values.put(NAME_COL, restaurantName)
-//        values.put(DESC_COL, description)
-//
-//        db.insert(TABLE_NAME, null, values)
-//
-//        db.close()
-//    }
-//    fun removeRestaurant(
-//        restaurantName: String?
-//    ) {
-//        val db = this.writableDatabase
-//
-//        val query = ("DELETE FROM " + TABLE_NAME + " WHERE "
-//                + NAME_COL + " like " + "'$restaurantName'")
-//        db.execSQL(query)
-//
-//        db.close()
-//    }
+    fun addReview(review: ReviewEntity) {
+        val db = this.writableDatabase
+        db.execSQL("INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
+                "VALUES('${review.username}', '${review.uid}', '${review.restaurantId}', '${review.review}', " +
+                "'${review.stars}', '${review.location}')")
+    }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         db.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")

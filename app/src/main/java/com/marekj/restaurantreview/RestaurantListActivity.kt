@@ -52,7 +52,6 @@ class RestaurantListActivity : AppCompatActivity() {
         }
         val navigationView = findViewById<NavigationView>(R.id.navigation)
         navigationView.setNavigationItemSelectedListener { menuItem ->
-            // Handle menu item selected
             drawerLayout.close()
             true
             if (menuItem.itemId == R.id.logoutDrawer) {
