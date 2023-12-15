@@ -47,4 +47,8 @@ class RestaurantView : AppCompatActivity() {
     private fun fillReviews(extras: String): ArrayList<ReviewEntity> {
         return ReviewDatabase(this).getReviewsByRestaurantId(extras)
     }
+
+    private fun addReviewButton() {
+        
+    }
 }

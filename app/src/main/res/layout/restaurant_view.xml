@@ -84,6 +84,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/restaurantViewDescription" />
 
+            <Button
+                android:id="@+id/addReview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/addReview"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/restaurantViewAddress" />
+
             <view
                 android:id="@+id/restaurantReviewRecycler"
                 class="androidx.recyclerview.widget.RecyclerView"
@@ -93,19 +103,9 @@
                 android:scrollbars="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/restaurantViewAddress"
+                app:layout_constraintTop_toBottomOf="@+id/addReview"
                 tools:layout_conversion_absoluteHeight="669dp"
                 tools:layout_conversion_absoluteWidth="411dp" />
-
-            <Button
-                android:id="@+id/addReview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/addReview"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/restaurantReviewRecycler" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -33,6 +33,24 @@ class ReviewDatabase (context: Context?) :
         db.execSQL("INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
                 "VALUES('marek', '123abc', 1, 'Testing one', 4, 'Swansea')")
         db.execSQL("INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
+                "VALUES('marek', '123abc', 1, 'Testing one', 3, 'Swansea')")
+        db.execSQL("INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
+                "VALUES('marek', '123abc', 1, 'Testing one', 2, 'Swansea')")
+        db.execSQL("INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
+                "VALUES('marek', '123abc', 1, 'Testing one', 1, 'Swansea')")
+        db.execSQL("INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
+                "VALUES('marek', '123abc', 1, 'Testing one', 5, 'Swansea')")
+        db.execSQL("INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
+                "VALUES('marek', '123abc', 1, 'Testing one', 3, 'Swansea')")
+        db.execSQL("INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
+                "VALUES('marek', '123abc', 1, 'Testing one', 4, 'Swansea')")
+        db.execSQL("INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
+                "VALUES('marek', '123abc', 1, 'Testing one', 4, 'Swansea')")
+        db.execSQL("INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
+                "VALUES('marek', '123abc', 1, 'Testing one', 4, 'Swansea')")
+        db.execSQL("INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
+                "VALUES('marek', '123abc', 1, 'Testing one', 4, 'Swansea')")
+        db.execSQL("INSERT INTO $TABLE_NAME($USER_NAME, $UID, $RESTAURANT_ID, $REVIEW, $STARS, $LOCATION) " +
                 "VALUES('marek', '123def', 2, 'Testing two', 3, 'London')")
     }
 
