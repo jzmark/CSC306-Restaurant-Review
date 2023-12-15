@@ -28,8 +28,8 @@ class RestaurantListActivity : AppCompatActivity() {
 
         val imageModelArrayList = populateList()
         val recyclerView =
-            findViewById<View>(R.id.my_recycler_view) as RecyclerView // Bind to the recyclerview in the layout
-        val layoutManager = LinearLayoutManager(this) // Get the layout manager
+            findViewById<View>(R.id.my_recycler_view) as RecyclerView
+        val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
         val mAdapter = RestaurantListAdapter(imageModelArrayList)
         recyclerView.adapter = mAdapter

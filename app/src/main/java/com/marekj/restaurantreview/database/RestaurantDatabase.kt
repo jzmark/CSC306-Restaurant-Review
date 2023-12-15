@@ -133,33 +133,6 @@ class RestaurantDatabase(context: Context?) :
         return restaurant
     }
 
-    fun addRestaurant(
-        restaurantName: String?,
-        description: String?
-    ) {
-        val db = this.writableDatabase
-        val values = ContentValues()
-
-        values.put(NAME_COL, restaurantName)
-        values.put(DESC_COL, description)
-
-        db.insert(TABLE_NAME, null, values)
-
-        db.close()
-    }
-
-    fun removeRestaurant(
-        restaurantName: String?
-    ) {
-        val db = this.writableDatabase
-
-        val query = ("DELETE FROM " + TABLE_NAME + " WHERE "
-                + NAME_COL + " like " + "'$restaurantName'")
-        db.execSQL(query)
-
-        db.close()
-    }
-
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         db.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
         onCreate(db)

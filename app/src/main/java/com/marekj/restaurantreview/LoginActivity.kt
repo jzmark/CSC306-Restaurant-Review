@@ -67,7 +67,6 @@ class LoginActivity : AppCompatActivity() {
                 auth.signInWithEmailAndPassword(emailText.toString(), passText.toString())
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
-                            // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success")
                             val user = auth.currentUser
                             val restaurantListActivity = Intent(
@@ -77,7 +76,6 @@ class LoginActivity : AppCompatActivity() {
                             startActivity(restaurantListActivity)
                             finish()
                         } else {
-                            // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.exception)
                             loginButton.hideKeyboard()
                             Snackbar.make(

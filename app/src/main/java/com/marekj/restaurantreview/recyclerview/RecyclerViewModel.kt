@@ -9,28 +9,18 @@ class RecyclerViewModel {
     private var modelImage: Int = 0
     private var id: String = ""
 
-    /*
-     * Return the team name
-     */
     fun getNames(): String {
         return modelName.toString()
     }
 
-    /*
-     * Set a team name
-     */
     fun setNames(name: String) {
         this.modelName = name
     }
 
-    /* Return a team logo
-     */
     fun getImages(): Int {
         return modelImage
     }
 
-    /* Set a team logo
-     */
     fun setImages(imageDrawable: Int) {
         this.modelImage = imageDrawable
     }

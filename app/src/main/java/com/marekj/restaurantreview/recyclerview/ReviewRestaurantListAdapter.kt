@@ -17,9 +17,6 @@ import com.marekj.restaurantreview.database.ReviewEntity
 class ReviewRestaurantListAdapter (private val imageModelArrayList: MutableList<ReviewEntity>)
     : RecyclerView.Adapter<ReviewRestaurantListAdapter.ViewHolder>() {
 
-    /*
-     * Inflate our views using the layout defined in row_layout.xml
-     */
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val v = inflater.inflate(R.layout.review_row_layout, parent, false)
@@ -27,9 +24,7 @@ class ReviewRestaurantListAdapter (private val imageModelArrayList: MutableList<
         return ViewHolder(v)
     }
 
-    /*
-     * Bind the data to the child views of the ViewHolder
-     */
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val info = imageModelArrayList[position]
 
@@ -39,16 +34,12 @@ class ReviewRestaurantListAdapter (private val imageModelArrayList: MutableList<
         holder.review.text = info.review
     }
 
-    /*
-     * Get the maximum size of the
-     */
+
     override fun getItemCount(): Int {
         return imageModelArrayList.size
     }
 
-    /*
-     * The parent class that handles layout inflation and child view use
-     */
+
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener{
 
         var stars = itemView.findViewById<RatingBar>(R.id.ratingBarReviewRow)
@@ -65,9 +56,3 @@ class ReviewRestaurantListAdapter (private val imageModelArrayList: MutableList<
         }
     }
 }
-
-
-
-
-//var intent = Intent(itemView.context, TeamDetail::class.java)
-//itemView.context.startActivity(intent)

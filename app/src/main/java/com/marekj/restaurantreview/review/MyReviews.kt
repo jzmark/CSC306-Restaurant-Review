@@ -27,8 +27,8 @@ class MyReviews : AppCompatActivity() {
         val user = Firebase.auth.currentUser
         val imageModelArrayList = fillReviews(user!!.uid!!)
         val recyclerView =
-            findViewById<View>(R.id.myReviewsRecycle) as RecyclerView // Bind to the recyclerview in the layout
-        val layoutManager = LinearLayoutManager(this) // Get the layout manager
+            findViewById<View>(R.id.myReviewsRecycle) as RecyclerView
+        val layoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = layoutManager
         val mAdapter = EditRestaurantListAdapter(imageModelArrayList)
         recyclerView.adapter = mAdapter
