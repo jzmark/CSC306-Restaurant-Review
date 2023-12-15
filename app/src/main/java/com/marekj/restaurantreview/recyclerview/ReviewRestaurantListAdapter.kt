@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.marekj.restaurantreview.R
 import com.marekj.restaurantreview.database.ReviewEntity
 
-class ReviewRestaurantListAdapter (private val imageModelArrayList: MutableList<ReviewEntity>)
-    : RecyclerView.Adapter<ReviewRestaurantListAdapter.ViewHolder>() {
+class ReviewRestaurantListAdapter(private val imageModelArrayList: MutableList<ReviewEntity>) :
+    RecyclerView.Adapter<ReviewRestaurantListAdapter.ViewHolder>() {
 
     /*
      * Inflate our views using the layout defined in row_layout.xml
@@ -44,7 +44,8 @@ class ReviewRestaurantListAdapter (private val imageModelArrayList: MutableList<
     /*
      * The parent class that handles layout inflation and child view use
      */
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener{
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
+        View.OnClickListener {
 
         var stars = itemView.findViewById<RatingBar>(R.id.ratingBarReviewRow)
         var username = itemView.findViewById<TextView>(R.id.usernameReview)
@@ -60,8 +61,6 @@ class ReviewRestaurantListAdapter (private val imageModelArrayList: MutableList<
         }
     }
 }
-
-
 
 
 //var intent = Intent(itemView.context, TeamDetail::class.java)

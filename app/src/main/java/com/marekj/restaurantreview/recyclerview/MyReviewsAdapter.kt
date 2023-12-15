@@ -8,12 +8,12 @@ import android.view.ViewGroup
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.marekj.restaurantreview.review.DeleteReview
+import com.marekj.restaurantreview.review.DetailedMyReview
 import com.marekj.restaurantreview.R
 import com.marekj.restaurantreview.database.ReviewEntity
 
-class MyReviewsAdapter (private val imageModelArrayList: MutableList<ReviewEntity>)
-    : RecyclerView.Adapter<MyReviewsAdapter.ViewHolder>() {
+class MyReviewsAdapter(private val imageModelArrayList: MutableList<ReviewEntity>) :
+    RecyclerView.Adapter<MyReviewsAdapter.ViewHolder>() {
 
     /*
      * Inflate our views using the layout defined in row_layout.xml
@@ -48,7 +48,8 @@ class MyReviewsAdapter (private val imageModelArrayList: MutableList<ReviewEntit
     /*
      * The parent class that handles layout inflation and child view use
      */
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener{
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
+        View.OnClickListener {
 
         var stars = itemView.findViewById<RatingBar>(R.id.ratingBarReviewRow)
         var username = itemView.findViewById<TextView>(R.id.usernameReview)
@@ -62,7 +63,7 @@ class MyReviewsAdapter (private val imageModelArrayList: MutableList<ReviewEntit
 
 
         override fun onClick(v: View) {
-            var intent = Intent(itemView.context, DeleteReview::class.java)
+            var intent = Intent(itemView.context, DetailedMyReview::class.java)
             intent.putExtra("id", this.reviewId)
             val context = itemView.context as Activity
             context.startActivity(intent)
@@ -70,8 +71,6 @@ class MyReviewsAdapter (private val imageModelArrayList: MutableList<ReviewEntit
         }
     }
 }
-
-
 
 
 //var intent = Intent(itemView.context, TeamDetail::class.java)

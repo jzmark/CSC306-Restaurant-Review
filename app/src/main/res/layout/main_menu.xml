@@ -54,23 +54,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-<!--    <androidx.coordinatorlayout.widget.CoordinatorLayout-->
-<!--        android:id="@+id/coordinatorLayout2"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        tools:layout_editor_absoluteY="210dp">-->
-
-<!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-<!--            android:id="@+id/floating_action_button"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="bottom|end"-->
-<!--            android:layout_margin="16dp"-->
-<!--            android:contentDescription="@string/addReview"-->
-<!--            app:srcCompat="@drawable/ic_plus" />-->
-
-<!--    </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
-
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation"
         android:layout_width="wrap_content"

@@ -10,7 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.marekj.restaurantreview.R
 import com.marekj.restaurantreview.restaurant.RestaurantView
 
-class RestaurantListAdapter(private val imageModelArrayList: MutableList<RecyclerViewModel>) : RecyclerView.Adapter<RestaurantListAdapter.ViewHolder>() {
+class RestaurantListAdapter(private val imageModelArrayList: MutableList<RecyclerViewModel>) :
+    RecyclerView.Adapter<RestaurantListAdapter.ViewHolder>() {
 
     /*
      * Inflate our views using the layout defined in row_layout.xml
@@ -44,7 +45,8 @@ class RestaurantListAdapter(private val imageModelArrayList: MutableList<Recycle
     /*
      * The parent class that handles layout inflation and child view use
      */
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener{
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
+        View.OnClickListener {
 
         var imgView = itemView.findViewById<View>(R.id.restaurantPicture) as ImageView
         var txtMsg = itemView.findViewById<View>(R.id.restaurantDetails) as TextView
@@ -62,8 +64,6 @@ class RestaurantListAdapter(private val imageModelArrayList: MutableList<Recycle
         }
     }
 }
-
-
 
 
 //var intent = Intent(itemView.context, TeamDetail::class.java)

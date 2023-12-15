@@ -20,12 +20,13 @@
 
             <ImageView
                 android:id="@+id/restaurantPicture"
-                android:scaleType="centerInside"
-                android:adjustViewBounds="true"
-                android:layout_width="106dp"
-                android:layout_height="66dp"
+                android:layout_width="95dp"
+                android:layout_height="62dp"
+                android:layout_centerInParent="true"
                 android:layout_marginStart="5dp"
+                android:adjustViewBounds="true"
                 android:contentDescription="@string/restaurant_picture"
+                android:scaleType="fitXY"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/restaurantDetails"
                 app:layout_constraintStart_toStartOf="parent"

@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.marekj.restaurantreview.LoginActivity
@@ -26,21 +25,14 @@ class RestaurantListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_menu)
         drawerListener()
-        
+
         val imageModelArrayList = populateList()
-        val recyclerView = findViewById<View>(R.id.my_recycler_view) as RecyclerView // Bind to the recyclerview in the layout
+        val recyclerView =
+            findViewById<View>(R.id.my_recycler_view) as RecyclerView // Bind to the recyclerview in the layout
         val layoutManager = LinearLayoutManager(this) // Get the layout manager
         recyclerView.layoutManager = layoutManager
         val mAdapter = RestaurantListAdapter(imageModelArrayList)
         recyclerView.adapter = mAdapter
-
-        val user = Firebase.auth.currentUser
-        user?.let {
-           var name = it.displayName
-            Snackbar.make(recyclerView, name.toString(),
-                Snackbar.LENGTH_SHORT)
-                .show()
-        }
     }
 
     private fun drawerListener() {
@@ -49,7 +41,12 @@ class RestaurantListActivity : AppCompatActivity() {
             .findViewById<TextView>(R.id.headerNavDrawer)
         val topAppBar = findViewById<MaterialToolbar>(R.id.topAppBar)
         val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
-        headerDrawer.text = getProfileName()
+        val user = Firebase.auth.currentUser
+        var name = ""
+        user?.let {
+            name = it.displayName.toString()
+        }
+        headerDrawer.text = "Hi " + name + "!"
         topAppBar.setNavigationOnClickListener {
             drawerLayout.open()
         }
@@ -63,28 +60,23 @@ class RestaurantListActivity : AppCompatActivity() {
                 startActivity(menuIntent)
                 finish()
                 false
-            }
-            else if (menuItem.itemId == R.id.myReviewsDrawer) {
+            } else if (menuItem.itemId == R.id.myReviewsDrawer) {
                 val menuIntent = Intent(this, MyReviews::class.java)
                 startActivity(menuIntent)
+                finish()
                 false
-            }
-            else {
-//                val menuIntent = Intent(this, RestaurantListActivity::class.java)
-//                startActivity(menuIntent)
+            } else if (menuItem.itemId == R.id.restaurantsDrawer) {
+                val menuIntent = Intent(this, RestaurantListActivity::class.java)
+                startActivity(menuIntent)
+                finish()
+                false
+            } else {
+                val menuIntent = Intent(this, this::class.java)
+                startActivity(menuIntent)
+                finish()
                 false
             }
         }
-    }
-
-    private fun getProfileName() : String {
-        val user = Firebase.auth.currentUser
-        var name = ""
-        user?.let {
-            // Name, email address, and profile photo Url
-             name = it.displayName.toString()
-        }
-        return name
     }
 
     private fun populateList(): ArrayList<RecyclerViewModel> {
@@ -93,7 +85,7 @@ class RestaurantListActivity : AppCompatActivity() {
 
         val list = ArrayList<RecyclerViewModel>()
 
-        for (i in 0..< restaurantList.size) {
+        for (i in 0..<restaurantList.size) {
             val imageModel = RecyclerViewModel()
             imageModel.setNames(restaurantList[i].name)
             val resource = restaurantList[i].imageFile

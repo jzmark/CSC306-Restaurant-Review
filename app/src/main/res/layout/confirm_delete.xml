@@ -39,7 +39,7 @@
             </com.google.android.material.appbar.AppBarLayout>
 
             <Button
-                android:id="@+id/edit"
+                android:id="@+id/editButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -56,7 +56,7 @@
                 android:text="@string/remove"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/edit" />
+                app:layout_constraintTop_toBottomOf="@+id/editButton" />
 
             <view
                 android:id="@+id/deleteReviewRecyclerView"

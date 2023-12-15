@@ -67,7 +67,34 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".review.DeleteReview"
+            android:name=".review.DetailedMyReview"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".review.EditReview"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".guest.GuestRestaurantListActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".guest.GuestRestaurantView"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

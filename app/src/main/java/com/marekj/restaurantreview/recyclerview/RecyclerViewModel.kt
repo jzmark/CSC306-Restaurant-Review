@@ -1,4 +1,5 @@
 package com.marekj.restaurantreview.recyclerview
+
 /*
  * Data model class to store logos and team names from F1
  */
