@@ -7,11 +7,14 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.RatingBar
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import com.marekj.restaurantreview.database.RestaurantDatabase
 import com.marekj.restaurantreview.database.ReviewDatabase
 import com.marekj.restaurantreview.database.ReviewEntity
 
@@ -24,7 +27,8 @@ class AddReviewActivity : AppCompatActivity() {
         if (extras != null) {
             value = extras.getString("id")!!
             buttonListener(value)
-
+            val db = RestaurantDatabase(this)
+            findViewById<TextView>(R.id.restaurantAddReviewName).text = db.getRestaurantById(value).name
         }
     }
 

@@ -27,7 +27,6 @@ class RestaurantView : AppCompatActivity() {
             val recyclerView = findViewById<View>(R.id.restaurantReviewRecycler) as RecyclerView // Bind to the recyclerview in the layout
             val layoutManager = LinearLayoutManager(this) // Get the layout manager
             recyclerView.layoutManager = layoutManager
-            Log.w(TAG, imageModelArrayList.size.toString())
             val mAdapter = ReviewRestaurantListAdapter(imageModelArrayList)
             recyclerView.adapter = mAdapter
             reviewButtonListener(extras.getString("id")!!)

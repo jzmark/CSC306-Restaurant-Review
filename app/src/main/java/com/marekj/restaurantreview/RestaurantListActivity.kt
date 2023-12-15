@@ -53,17 +53,23 @@ class RestaurantListActivity : AppCompatActivity() {
         val navigationView = findViewById<NavigationView>(R.id.navigation)
         navigationView.setNavigationItemSelectedListener { menuItem ->
             drawerLayout.close()
-            true
             if (menuItem.itemId == R.id.logoutDrawer) {
+                topAppBar.menu.findItem(R.id.logoutDrawer).setChecked(false)
                 val menuIntent = Intent(this, LoginActivity::class.java)
                 Firebase.auth.signOut()
                 startActivity(menuIntent)
                 finish()
-                true
-            } else {
+                false
+            }
+            else if (menuItem.itemId == R.id.myReviewsDrawer) {
+                val menuIntent = Intent(this, MyReviews::class.java)
+                startActivity(menuIntent)
+                false
+            }
+            else {
 //                val menuIntent = Intent(this, RestaurantListActivity::class.java)
 //                startActivity(menuIntent)
-                true
+                false
             }
         }
     }

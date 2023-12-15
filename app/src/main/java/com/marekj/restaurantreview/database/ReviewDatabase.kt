@@ -63,10 +63,33 @@ class ReviewDatabase (context: Context?) :
         val reviews = ArrayList<ReviewEntity>()
         if (cursorReviews.moveToFirst()) {
             do {
-                reviews.add(ReviewEntity(cursorReviews.getString(0), cursorReviews.getString(1),
+                reviews.add(ReviewEntity(cursorReviews.getString(0), "Username: "
+                        +  cursorReviews.getString(1),
                     cursorReviews.getString(2), cursorReviews.getString(3).toInt(),
                     cursorReviews.getString(4), cursorReviews.getString(5).toInt(),
-                    cursorReviews.getString(6)))
+                    "Location: " + cursorReviews.getString(6)))
+            } while (cursorReviews.moveToNext())
+
+        }
+        cursorReviews.close()
+        db.close()
+        return reviews
+    }
+
+    fun getReviewsByUID(uid: String) : ArrayList<ReviewEntity> {
+        val db = this.readableDatabase
+
+        val cursorReviews = db.rawQuery("SELECT * FROM $TABLE_NAME WHERE " +
+                "$UID like '$uid'", null)
+
+        val reviews = ArrayList<ReviewEntity>()
+        if (cursorReviews.moveToFirst()) {
+            do {
+                reviews.add(ReviewEntity(cursorReviews.getString(0), "Username: "
+                        +  cursorReviews.getString(1),
+                    cursorReviews.getString(2), cursorReviews.getString(3).toInt(),
+                    cursorReviews.getString(4), cursorReviews.getString(5).toInt(),
+                    "Location: " + cursorReviews.getString(6)))
             } while (cursorReviews.moveToNext())
 
         }
